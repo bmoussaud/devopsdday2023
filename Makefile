@@ -3,3 +3,6 @@ load_h2:
 
 playlist:
 	curl https://playlist-service-springboot.devopsdday2023.16x.tanzu.moussaud.org/api/playlist | jq
+
+deploy_app:
+	kubectl apply -f app/playlist-frontend-angular -f app/playlist-service-springboot
