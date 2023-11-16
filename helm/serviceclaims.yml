@@ -1,0 +1,24 @@
+apiVersion: servicebinding.io/v1alpha3
+kind: ServiceBinding
+metadata:
+  name: playlist-service-springboot-database
+  annotations:
+    kapp.k14s.io/change-group: servicebinding.io/ServiceBindings
+  labels:
+    app.kubernetes.io/name: playlist-service-springboot
+    app.kubernetes.io/part-of: musicstore
+    app.kubernetes.io/component: run
+    carto.run/workload-name: playlist-service-springboot
+spec:
+  name: database
+  service:
+    apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+    kind: ClassClaim
+    name: musicstore-pgsql-bitnami
+  workload:
+    apiVersion: serving.knative.dev/v1
+    kind: Service
+    name: playlist-service-springboot
+  env:
+    - name: SPRING_PROFILES_ACTIVE
+      key: type
