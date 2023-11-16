@@ -1,0 +1,10 @@
+# tanzu service class-claim create dogs-pgsql --class postgresql-unmanaged --parameter storageGB=1
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ClassClaim
+metadata:
+  name: musicstore-pgsql-bitnami 
+spec:
+  classRef:
+    name: postgresql-unmanaged
+  parameters:
+    storageGB: 1
