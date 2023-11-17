@@ -14,7 +14,7 @@ spec:
   service:
     apiVersion: sql.tanzu.vmware.com/v1
     kind: Postgres
-    name: devopsdday2023-database
+    name: musicstore-pgsql-operator   
   workload:
     apiVersion: serving.knative.dev/v1
     kind: Service

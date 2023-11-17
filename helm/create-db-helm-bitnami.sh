@@ -34,7 +34,7 @@ kdecsec musicstore-pgsql-helm-postgresql-svcbind-postgres -n ${NAMESPACE}
 
 echo ""
 echo ">>Create the claim"
-tanzu service resource-claims create musicstore-pgsql-with-helm --resource-name musicstore-pgsql-helm-postgresql-svcbind-postgres --resource-kind Secret --resource-api-version v1 -n ${NAMESPACE}
-tanzu services resource-claims get musicstore-pgsql-with-helm --namespace ${NAMESPACE}
+tanzu service resource-claims create musicstore-pgsql-bitnami  --resource-name musicstore-pgsql-helm-postgresql-svcbind-postgres --resource-kind Secret --resource-api-version v1 -n ${NAMESPACE}
+tanzu services resource-claims get musicstore-pgsql-bitnami  --namespace ${NAMESPACE}
 
 echo "Done"
