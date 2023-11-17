@@ -1,10 +1,11 @@
 apiVersion: services.apps.tanzu.vmware.com/v1alpha1
 kind: ClassClaim
 metadata:
-  name: musicstore-pgsql-crossplane
+  name: musicstore-pgsql-tanzu-rossplane
 spec:
   classRef:
     name: azure-pgsql-bmoussaud
   parameters:
     location: "france"
     version: "13"
+    storageGB: 32
