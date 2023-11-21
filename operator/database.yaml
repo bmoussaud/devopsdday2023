@@ -3,8 +3,6 @@ kind: Postgres
 metadata:
   name: musicstore-pgsql-operator
 spec:
-  memory: 800Mi
-  cpu: "0.8"
   pgConfig:
     dbname: musicstore-pgsql-operator
     username: pgadmin
