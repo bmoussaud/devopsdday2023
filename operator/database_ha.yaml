@@ -1,0 +1,14 @@
+apiVersion: sql.tanzu.vmware.com/v1
+kind: Postgres
+metadata:
+  name: musicstore-pgsql-operator
+spec:
+  pgConfig:
+    dbname: musicstore-pgsql-operator
+    username: pgadmin
+    appUser: admin
+  imagePullSecret:
+    name: app-registry
+  highAvailability:
+    enabled: true
+    readReplicas: 3

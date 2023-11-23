@@ -2,7 +2,7 @@ db_clean:
 	curl https://playlist-service-springboot.devopsdday2023.16x.tanzu.moussaud.org/api/playlist/clear
 
 load_h2: db_clean
-	curl https://playlist-service-springboot.devopsdday2023.16x.tanzu.moussaud.org/api/playlist/load/h2
+	curl https://playlist-service-springboot.devopsdday2023.16x.tanzu.moussaud.org/api/playlist/load/artic
 
 load_helm: db_clean
 	curl https://playlist-service-springboot.devopsdday2023.16x.tanzu.moussaud.org/api/playlist/load/bitnami
@@ -35,6 +35,11 @@ bind_db_helm:
 deploy_db_operator:
 	kubectl apply -f operator/database.yaml -f operator/rc.yaml 
 	bat operator/database.yaml
+	kubectl get postgres.sql.tanzu.vmware.com -w
+
+deploy_db_operator_ha:
+	kubectl apply -f operator/database_ha.yaml -f operator/rc.yaml 
+	bat operator/database_ha.yaml
 	kubectl get postgres.sql.tanzu.vmware.com -w
 
 undeploy_db_operator:
