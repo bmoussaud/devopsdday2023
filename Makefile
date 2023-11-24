@@ -8,7 +8,7 @@ load_helm: db_clean
 	curl https://playlist-service-springboot.devopsdday2023.16x.tanzu.moussaud.org/api/playlist/load/bitnami
 
 load_operator: db_clean
-	curl https://playlist-service-springboot.devopsdday2023.16x.tanzu.moussaud.org/api/playlist/load/vmware
+	curl https://playlist-service-springboot.devopsdday2023.16x.tanzu.moussaud.org/api/playlist/load/broadcom
 
 load_crossplane: db_clean
 	curl https://playlist-service-springboot.devopsdday2023.16x.tanzu.moussaud.org/api/playlist/load/crossplane
